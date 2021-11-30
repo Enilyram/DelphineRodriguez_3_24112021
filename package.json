@@ -1,0 +1,22 @@
+{
+  "name": "p3_rodriguez_delphine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:.public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Enilyram/P3_rodriguez_delphine.git"
+  },
+  "author": "Delphine Rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Enilyram/P3_rodriguez_delphine/issues"
+  },
+  "homepage": "https://github.com/Enilyram/P3_rodriguez_delphine#readme",
+  "dependencies": {
+    "sass": "^1.43.5"
+  }
+}
