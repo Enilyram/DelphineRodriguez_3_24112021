@@ -1,3 +1,16 @@
+$primaire: #9356DC;
+$secondaire: #FF79DA;
+$tertiaire: #99E2D0;
+$background: #ebebeb;
+
+@mixin box-shadow 
+{
+    box-shadow: #a5a5a5 0 5px 10px;
+}
+@mixin box-shadow-hover 
+{
+    box-shadow: #747272 0 5px 10px;
+}
 @mixin center
 {
   display: flex;
@@ -6,11 +19,13 @@
 @mixin shrik {
     font-family: 'Shrikhand', cursive;
 }
-@mixin roboto {
-    font-family: 'Roboto', sans-serif;
+body 
+{
+    margin: 0;
 }
 main
 {
+    font-family: 'Roboto', sans-serif;
     a{
     text-decoration: none;
     color: black;
@@ -39,7 +54,7 @@ header
 .titreprincipal {
     @include center;
     @include shrik;
-  border-bottom: solid #B7B7B7;
+    border-bottom: solid #B7B7B7;
 }
 .recherche{
     background-color: #dedede;
@@ -47,13 +62,51 @@ header
   @include center
   
 }
+input 
+{
+    border-style: none;
+    background-color: #dedede;
+    border-radius: 0;
+    font-weight: bold;
+    padding-left: 20px;
+    height: 50px;
+    margin-top: 4px;
+}
 .explorez
 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    @include roboto;
-    background-color: #ebebeb;
+    background-color: $background;
+        &__texte h2
+        {
+            display: flex;
+            justify-content:center;
+        }
+        &__btn
+        {
+            background: linear-gradient($secondaire, $primaire);
+            @include box-shadow;
+            border-radius: 25px;
+            padding: 15px;
+            font-size: 18px;
+            margin-bottom: 20px;
+            transition: all 400ms;
+                &:hover 
+                {
+                    opacity: 0.90;
+                    @include box-shadow-hover;
+                }
+                a
+                {
+                    color: whitesmoke;
+                        &:hover
+                        {
+                            color: whitesmoke;
+                        }
+                }
+            
+        }
 }
 .fonctionnement
 {
@@ -65,12 +118,34 @@ header
         width: 70%;
         display: flex;
         justify-content: space-evenly;
+        flex-wrap: wrap;
+        padding-bottom: 20px;
+        
         &__texte
         {
             display: flex;
             align-items: center;
             width: 20%;
             justify-content: space-around;
+            border-radius: 20px;
+            background-color: $background;
+            justify-content: space-around;
+            flex-wrap: nowrap;
+            width: 280px;
+            height: 70px;
+            padding-right: 5%;
+            margin: 10px;
+            @include box-shadow;
+            transition: all 500ms;
+                &:hover
+                {
+                    background-color: #dfccf5;
+                    @include box-shadow-hover;
+                }
+                &:hover i
+                {
+                    color: $primaire;
+                }
             &__icon
             {
                 display: flex;
@@ -78,16 +153,17 @@ header
             }
             &__num
             {
-                    background-color: #9356DC;
+                    background-color: $primaire;
                     border-radius: 50%;
-                    width: 20px;
-                    height: 20px;
+                    width: 25px;
+                    height: 25px;
                     display: flex;
                     align-content: center;
                     justify-content: center;
                     align-items: center;
-                
-                
+                    color: white;
+                    margin-left: -23px;
+                   
             }
         }
 
@@ -99,7 +175,7 @@ header
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: #ebebeb;
+    background-color: $background;
         &__titre
         {
             display: flex;
@@ -108,28 +184,101 @@ header
         &__bloc
         {
             display: flex;
-            width: 60%;
             flex-wrap: wrap;
             justify-content: space-evenly;
+            max-width: 900px;
             &__card
             {
-                width: 450px;
                 height: 350px;
+                width: 95%;
                 overflow: hidden;
+                @include box-shadow;
+                border-radius: 15px;
+                margin: 25px;
+                transition: all 500ms;
+                    &:hover
+                    {
+                        @include box-shadow-hover;
+                    }
                     &-img
                     {
                         object-fit: cover;
-                        height: 50%;
+                        height: 70%;
                     }
                     &-description
                     {
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
+                        padding: 0 15px 0px 16px;
+                        &-icon {
+                            fill: transparent;
+                            stroke: black;
+                            stroke-width: 20;
+                            cursor: pointer;
+                            position: relative;
+                          
+                            svg {
+                              overflow: visible;
+                              width: 30px;
+                            }
+                          
+                            path {
+                              stroke-dashoffset: 0;
+                              stroke-dasharray: 1550;
+                              transform-origin: center;
+                              fill: transparent;
+                            }
+                          
+                            .heart-background {
+                              position: absolute;
+                              left: 0;
+                              right: 0;
+                              z-index: -2;
+                              stroke: none;
+                            }
+                          
+                            .heart-main:hover path {
+                              animation: stroke-animation 1.8s ease-in-out forwards;
+                            }
+                          }
                     }
             }
          }
-}
+} 
+  @keyframes stroke-animation {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    30% {
+      stroke-dashoffset: 1550;
+    }
+    60% {
+      stroke-dashoffset: 3100;
+      fill: transparent;
+      transform: scale(1);
+      stroke: url(#mygradient);
+    }
+    80% {
+      fill: url(#mygradient);
+      transform: scale(1.1);
+    }
+    90% {
+      transform: scale(1);
+      fill: url(#mygradient);
+    }
+    93% {
+        transform: scale(1.1);
+        fill: url(#mygradient);
+      }
+    100% {
+      stroke-dashoffset: 3100;
+      fill: url(#mygradient);
+      stroke: url(#mygradient);
+    }
+  }
+
+  
 .restaurant__img {
     height: 100%;
     width: 100%;
@@ -142,7 +291,7 @@ footer
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.377);
+    background-color: rgba(0, 0, 0, 0.849);
     color: white;
     a
     {
@@ -171,3 +320,4 @@ footer
         }
     }
 }
+

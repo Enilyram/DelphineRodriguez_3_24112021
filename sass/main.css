@@ -1,3 +1,11 @@
+body {
+  margin: 0;
+}
+
+main {
+  font-family: 'Roboto', sans-serif;
+}
+
 main a {
   text-decoration: none;
   color: black;
@@ -43,6 +51,16 @@ header a:hover {
           justify-content: center;
 }
 
+input {
+  border-style: none;
+  background-color: #dedede;
+  border-radius: 0;
+  font-weight: bold;
+  padding-left: 20px;
+  height: 50px;
+  margin-top: 4px;
+}
+
 .explorez {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -54,8 +72,43 @@ header a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: 'Roboto', sans-serif;
   background-color: #ebebeb;
+}
+
+.explorez__texte h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.explorez__btn {
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  background: linear-gradient(#FF79DA, #9356DC);
+  -webkit-box-shadow: #a5a5a5 0 5px 10px;
+          box-shadow: #a5a5a5 0 5px 10px;
+  border-radius: 25px;
+  padding: 15px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
+.explorez__btn:hover {
+  opacity: 0.90;
+  -webkit-box-shadow: #747272 0 5px 10px;
+          box-shadow: #747272 0 5px 10px;
+}
+
+.explorez__btn a {
+  color: whitesmoke;
+}
+
+.explorez__btn a:hover {
+  color: whitesmoke;
 }
 
 .fonctionnement {
@@ -79,6 +132,9 @@ header a:hover {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-bottom: 20px;
 }
 
 .fonctionnement__bloc__texte {
@@ -91,6 +147,29 @@ header a:hover {
   width: 20%;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  border-radius: 20px;
+  background-color: #ebebeb;
+  justify-content: space-around;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 280px;
+  height: 70px;
+  padding-right: 5%;
+  margin: 10px;
+  -webkit-box-shadow: #a5a5a5 0 5px 10px;
+          box-shadow: #a5a5a5 0 5px 10px;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+.fonctionnement__bloc__texte:hover {
+  background-color: #dfccf5;
+  -webkit-box-shadow: #747272 0 5px 10px;
+          box-shadow: #747272 0 5px 10px;
+}
+
+.fonctionnement__bloc__texte:hover i {
+  color: #9356DC;
 }
 
 .fonctionnement__bloc__texte__icon {
@@ -105,8 +184,8 @@ header a:hover {
 .fonctionnement__bloc__texte__num {
   background-color: #9356DC;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -118,6 +197,8 @@ header a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: white;
+  margin-left: -23px;
 }
 
 .restaurant {
@@ -150,24 +231,35 @@ header a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 60%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  max-width: 900px;
 }
 
 .restaurant__bloc__card {
-  width: 450px;
   height: 350px;
+  width: 95%;
   overflow: hidden;
+  -webkit-box-shadow: #a5a5a5 0 5px 10px;
+          box-shadow: #a5a5a5 0 5px 10px;
+  border-radius: 15px;
+  margin: 25px;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+.restaurant__bloc__card:hover {
+  -webkit-box-shadow: #747272 0 5px 10px;
+          box-shadow: #747272 0 5px 10px;
 }
 
 .restaurant__bloc__card-img {
   -o-object-fit: cover;
      object-fit: cover;
-  height: 50%;
+  height: 70%;
 }
 
 .restaurant__bloc__card-description {
@@ -180,6 +272,113 @@ header a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 0 15px 0px 16px;
+}
+
+.restaurant__bloc__card-description-icon {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 20;
+  cursor: pointer;
+  position: relative;
+}
+
+.restaurant__bloc__card-description-icon svg {
+  overflow: visible;
+  width: 30px;
+}
+
+.restaurant__bloc__card-description-icon path {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 1550;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  fill: transparent;
+}
+
+.restaurant__bloc__card-description-icon .heart-background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: -2;
+  stroke: none;
+}
+
+.restaurant__bloc__card-description-icon .heart-main:hover path {
+  -webkit-animation: stroke-animation 1.8s ease-in-out forwards;
+          animation: stroke-animation 1.8s ease-in-out forwards;
+}
+
+@-webkit-keyframes stroke-animation {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  30% {
+    stroke-dashoffset: 1550;
+  }
+  60% {
+    stroke-dashoffset: 3100;
+    fill: transparent;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    stroke: url(#mygradient);
+  }
+  80% {
+    fill: url(#mygradient);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  90% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    fill: url(#mygradient);
+  }
+  93% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    fill: url(#mygradient);
+  }
+  100% {
+    stroke-dashoffset: 3100;
+    fill: url(#mygradient);
+    stroke: url(#mygradient);
+  }
+}
+
+@keyframes stroke-animation {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  30% {
+    stroke-dashoffset: 1550;
+  }
+  60% {
+    stroke-dashoffset: 3100;
+    fill: transparent;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    stroke: url(#mygradient);
+  }
+  80% {
+    fill: url(#mygradient);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  90% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    fill: url(#mygradient);
+  }
+  93% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    fill: url(#mygradient);
+  }
+  100% {
+    stroke-dashoffset: 3100;
+    fill: url(#mygradient);
+    stroke: url(#mygradient);
+  }
 }
 
 .restaurant__img {
@@ -201,7 +400,7 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgba(0, 0, 0, 0.377);
+  background-color: rgba(0, 0, 0, 0.849);
   color: white;
 }
 
