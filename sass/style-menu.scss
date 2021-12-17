@@ -1,0 +1,252 @@
+$primaire: #9356DC;
+$secondaire: #FF79DA;
+$tertiaire: #99E2D0;
+$background: #ebebeb;
+@mixin box-shadow 
+{
+    box-shadow: #a5a5a5 0 5px 10px;
+}
+@mixin box-shadow-hover 
+{
+    box-shadow: #747272 0 5px 10px;
+}
+@mixin center
+{
+  display: flex;
+  justify-content: center;
+}
+@mixin shrik {
+    font-family: 'Shrikhand', cursive;
+    font-weight: normal;
+}
+@media (max-width:580px)
+{
+    .restaurant__bloc__card-new
+    {
+        margin: 15px 15px 15px 70%;
+    }
+    footer
+    {
+        h2
+        {
+            padding-left: 40px; 
+            padding-top: 20px;
+            margin-bottom: 2px;
+        }
+
+        .lien_footer ul
+        {
+            display: flex;
+            flex-direction: column;
+
+        }
+    }
+}
+@media (min-width:580px)
+{
+    .restaurant__bloc__card-new
+    {
+        margin: 15px 15px 15px 80%;
+    }
+    footer
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+
+        .lien_footer ul
+        {
+            display: flex;
+            flex-direction: raw;
+
+        }
+    }
+}
+body 
+{
+    margin: 0;
+    min-width: 390px;
+}
+main
+{
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    margin-top: -100px;
+    background-color: $background;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    a{
+    text-decoration: none;
+    color: black;
+        &:hover 
+        {
+            color: black;
+        }
+    }
+}
+*
+{
+    list-style: none;
+}
+header
+{
+    a{
+    text-decoration: none;
+    color: black;
+        &:hover 
+        {
+            color: black;
+        }
+    }
+    h1
+    {
+        margin: 0%;
+        @include center;
+        @include shrik;
+    }
+}
+.header__img
+{
+   height: 500px;
+   width: 100%;
+   
+    &-img
+    {
+        height: 100%;
+   width: 100%;
+   object-fit: cover;
+    }
+}
+
+.titrerestaurant
+{
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
+    margin: 44px 0px 30px 0px;
+    @include shrik
+}
+.restaurant__bloc__card-description-icon
+{
+    fill: transparent;
+    stroke: black;
+    stroke-width: 20;
+    cursor: pointer;
+    position: relative;
+  
+    svg {
+      overflow: visible;
+      width: 30px;
+    }
+  
+    path {
+      stroke-dashoffset: 0;
+      stroke-dasharray: 1550;
+      transform-origin: center;
+      fill: transparent;
+    }
+  
+    .heart-background {
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: -2;
+      stroke: none;
+    }
+  
+    .heart-main:hover path {
+      animation: stroke-animation 1.8s ease-in-out forwards;
+    }
+}
+@keyframes stroke-animation {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    30% {
+      stroke-dashoffset: 1550;
+    }
+    60% {
+      stroke-dashoffset: 3100;
+      fill: transparent;
+      transform: scale(1);
+      stroke: url(#mygradient);
+    }
+    80% {
+      fill: url(#mygradient);
+      transform: scale(1.1);
+    }
+    90% {
+      transform: scale(1);
+      fill: url(#mygradient);
+    }
+    93% {
+        transform: scale(1.1);
+        fill: url(#mygradient);
+      }
+    100% {
+      stroke-dashoffset: 3100;
+      fill: url(#mygradient);
+      stroke: url(#mygradient);
+    }
+  }
+.commander__btn
+{
+    background: linear-gradient($secondaire, $primaire);
+    @include box-shadow;
+    border-radius: 25px;
+    padding: 15px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    transition: all 400ms;
+        &:hover 
+            {
+                opacity: 0.90;
+                @include box-shadow-hover;
+            }
+                a
+                {
+                    color: whitesmoke;
+                        &:hover
+                        {
+                            color: whitesmoke;
+                        }
+                }
+}
+footer
+{
+    
+    background-color: rgba(0, 0, 0, 0.849);
+    color: white;
+    h2
+    {
+        @include shrik
+    }
+    a
+    {
+      text-decoration: none;
+        color: rgb(255, 255, 255);
+          &:hover 
+          {
+          color: rgb(255, 255, 255);
+          }
+    }
+}
+.lien_footer
+{
+    display: flex;
+    width: 100%;
+    color: white;
+    ul
+    {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        color: white;
+        li
+        {
+            color: white;
+        }
+    }
+}

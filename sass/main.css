@@ -1,5 +1,53 @@
+@media (max-width: 580px) {
+  .restaurant__bloc__card-new {
+    margin: 15px 15px 15px 70%;
+  }
+  footer h2 {
+    padding-left: 40px;
+    padding-top: 20px;
+    margin-bottom: 2px;
+  }
+  footer .lien_footer ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (min-width: 580px) {
+  .restaurant__bloc__card-new {
+    margin: 15px 15px 15px 80%;
+  }
+  footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer .lien_footer ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: raw;
+            flex-direction: raw;
+  }
+}
+
 body {
   margin: 0;
+  min-width: 390px;
 }
 
 main {
@@ -36,6 +84,7 @@ header a:hover {
       -ms-flex-pack: center;
           justify-content: center;
   font-family: 'Shrikhand', cursive;
+  font-weight: normal;
   border-bottom: solid #B7B7B7;
 }
 
@@ -73,6 +122,11 @@ input {
       -ms-flex-align: center;
           align-items: center;
   background-color: #ebebeb;
+}
+
+.explorez__texte {
+  width: 60%;
+  text-align: center;
 }
 
 .explorez__texte h2 {
@@ -247,6 +301,7 @@ input {
           box-shadow: #a5a5a5 0 5px 10px;
   border-radius: 15px;
   margin: 25px;
+  position: relative;
   -webkit-transition: all 500ms;
   transition: all 500ms;
 }
@@ -260,6 +315,22 @@ input {
   -o-object-fit: cover;
      object-fit: cover;
   height: 70%;
+}
+
+.restaurant__bloc__card-new {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  background-color: #99E2D0;
+  padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+  color: #5f867c;
+  font-weight: bold;
+  font-size: 18px;
+  position: absolute;
+}
+
+.restaurant__bloc__card-new h5 {
+  margin: 0;
 }
 
 .restaurant__bloc__card-description {
@@ -390,18 +461,13 @@ input {
 }
 
 footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   background-color: rgba(0, 0, 0, 0.849);
   color: white;
+}
+
+footer h2 {
+  font-family: 'Shrikhand', cursive;
+  font-weight: normal;
 }
 
 footer a {

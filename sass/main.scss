@@ -18,10 +18,56 @@ $background: #ebebeb;
 }
 @mixin shrik {
     font-family: 'Shrikhand', cursive;
+    font-weight: normal;
 }
+@media (max-width:580px)
+{
+    .restaurant__bloc__card-new
+    {
+        margin: 15px 15px 15px 70%;
+    }
+    footer
+    {
+        h2
+        {
+            padding-left: 40px; 
+            padding-top: 20px;
+            margin-bottom: 2px;
+        }
+
+        .lien_footer ul
+        {
+            display: flex;
+            flex-direction: column;
+
+        }
+    }
+}
+@media (min-width:580px)
+{
+    .restaurant__bloc__card-new
+    {
+        margin: 15px 15px 15px 80%;
+    }
+    footer
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+
+        .lien_footer ul
+        {
+            display: flex;
+            flex-direction: raw;
+
+        }
+    }
+}
+
 body 
 {
     margin: 0;
+    min-width: 390px;
 }
 main
 {
@@ -45,6 +91,7 @@ header
             color: black;
         }
     }
+    
 }
 *
 {
@@ -72,16 +119,25 @@ input
     height: 50px;
     margin-top: 4px;
 }
+
 .explorez
 {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: $background;
-        &__texte h2
+        &__texte 
         {
-            display: flex;
-            justify-content:center;
+            width: 60%;
+            text-align: center;
+        
+        
+        
+            h2
+            {
+                display: flex;
+                justify-content:center;
+            }
         }
         &__btn
         {
@@ -195,6 +251,7 @@ input
                 @include box-shadow;
                 border-radius: 15px;
                 margin: 25px;
+                position: relative;
                 transition: all 500ms;
                     &:hover
                     {
@@ -205,6 +262,23 @@ input
                         object-fit: cover;
                         height: 70%;
                     }
+                    &-new 
+                    {
+                        align-self: flex-end;
+                        background-color: #99E2D0;
+                        padding: 10px 20px 10px 20px;
+                        border-radius: 5px;
+                        color: #5f867c;
+                        font-weight: bold;
+                        font-size: 18px;
+                        position: absolute;
+                        
+                            h5
+                            {
+                                margin: 0;
+                            }
+                    }
+
                     &-description
                     {
                         display: flex;
@@ -241,7 +315,7 @@ input
                             .heart-main:hover path {
                               animation: stroke-animation 1.8s ease-in-out forwards;
                             }
-                          }
+                        }
                     }
             }
          }
@@ -288,11 +362,13 @@ input
 }
 footer
 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    
     background-color: rgba(0, 0, 0, 0.849);
     color: white;
+    h2
+    {
+        @include shrik
+    }
     a
     {
       text-decoration: none;
@@ -320,4 +396,3 @@ footer
         }
     }
 }
-
