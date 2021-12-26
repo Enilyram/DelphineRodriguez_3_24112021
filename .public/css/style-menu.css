@@ -45,6 +45,40 @@
   }
 }
 
+.vignet1 {
+  -origin: bottom;
+  -webkit-animation: slide 1s ease-in 0.1s  both;
+          animation: slide 1s ease-in 0.1s  both;
+}
+
+.vignet2 {
+  -webkit-animation: slide 1s ease-in 0.3s  both;
+          animation: slide 1s ease-in 0.3s  both;
+}
+
+.vignet3 {
+  -webkit-animation: slide 1s ease-in 0.6s  both;
+          animation: slide 1s ease-in 0.6s  both;
+}
+
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 body {
   margin: 0;
   min-width: 390px;
@@ -55,7 +89,7 @@ main {
   font-family: 'Roboto', sans-serif;
   margin-top: -100px;
   background-color: #ebebeb;
-  border-radius: 15px;
+  border-radius: 55px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -124,6 +158,9 @@ header h1 {
   margin: 44px 0px 30px 0px;
   font-family: 'Shrikhand', cursive;
   font-weight: normal;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .restaurant__bloc__card-description-icon {
@@ -232,6 +269,176 @@ header h1 {
   }
 }
 
+@-webkit-keyframes checkanim {
+  0% {
+    -webkit-box-flex: 0;
+            flex: 0;
+    background-color: #99E2D0;
+  }
+  70% {
+    -webkit-box-flex: 1.5;
+            flex: 1.5;
+    background-color: #99E2D0;
+  }
+  100% {
+    -webkit-box-flex: 1;
+            flex: 1;
+    background-color: #99E2D0;
+  }
+}
+
+@keyframes checkanim {
+  0% {
+    -webkit-box-flex: 0;
+        -ms-flex: 0;
+            flex: 0;
+    background-color: #99E2D0;
+  }
+  70% {
+    -webkit-box-flex: 1.5;
+        -ms-flex: 1.5;
+            flex: 1.5;
+    background-color: #99E2D0;
+  }
+  100% {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    background-color: #99E2D0;
+  }
+}
+
+.container {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu {
+  width: 100%;
+}
+
+.menu__titre h2 {
+  font-weight: normal;
+}
+
+.menu__titre h2::after {
+  content: "";
+  display: block;
+  width: 55px;
+  height: 3px;
+  background: #99E2D0;
+  margin-top: 2px;
+}
+
+.menu__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  overflow: hidden;
+  background: white;
+  border: 1px white;
+  border-radius: 25px;
+  margin-top: 15px;
+  -webkit-box-shadow: #a5a5a5 0 5px 10px;
+          box-shadow: #a5a5a5 0 5px 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.menu__card:hover > .menu__card-check {
+  background-color: #99E2D0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 5px;
+  overflow: hidden;
+  border-radius: 0px 25px 25px 0px;
+  -webkit-animation: checkanim 1.5s ease-in-out both;
+          animation: checkanim 1.5s ease-in-out both;
+}
+
+.menu__card:hover .fa-check-circle {
+  -webkit-transition: -webkit-transform 700ms;
+  transition: -webkit-transform 700ms;
+  transition: transform 700ms;
+  transition: transform 700ms, -webkit-transform 700ms;
+  -webkit-animation: spin 1s ease-in-out both;
+          animation: spin 1s ease-in-out both;
+}
+
+.menu__card-prix {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  font-weight: bold;
+  position: relative;
+  margin-right: 15px;
+}
+
+.menu__card-texte {
+  margin-left: 15px;
+  width: 70%;
+}
+
+.menu__card-texte p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+}
+
+.menu__card-check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.menu__card-check .fa-check-circle {
+  color: white;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 .commander__btn {
   background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
   background: linear-gradient(#FF79DA, #9356DC);
@@ -243,6 +450,14 @@ header h1 {
   margin-bottom: 20px;
   -webkit-transition: all 400ms;
   transition: all 400ms;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 165px;
+  margin-top: 25px;
 }
 
 .commander__btn:hover {

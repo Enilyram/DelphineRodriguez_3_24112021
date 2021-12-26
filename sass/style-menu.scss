@@ -62,6 +62,27 @@ $background: #ebebeb;
         }
     }
 }
+.vignet1
+{
+    -origin: bottom;
+    animation: slide 1s ease-in 0.1s  both;
+}
+.vignet2
+{
+    animation: slide 1s ease-in 0.3s  both;
+}
+.vignet3
+{
+    animation: slide 1s ease-in 0.6s  both;
+}
+@keyframes slide {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 body 
 {
     margin: 0;
@@ -73,7 +94,7 @@ main
     font-family: 'Roboto', sans-serif;
     margin-top: -100px;
     background-color: $background;
-    border-radius: 15px;
+    border-radius: 55px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -126,7 +147,8 @@ header
     justify-content: space-around;
     width: 400px;
     margin: 44px 0px 30px 0px;
-    @include shrik
+    @include shrik ;
+    align-items: center;
 }
 .restaurant__bloc__card-description-icon
 {
@@ -191,6 +213,115 @@ header
       stroke: url(#mygradient);
     }
   }
+  @keyframes checkanim {
+    0% {
+      flex: 0;
+      background-color: $tertiaire;
+    }
+    70% {
+      flex: 1.5;
+      background-color: $tertiaire;
+    }
+    100% {
+      flex: 1;
+      background-color: $tertiaire;
+    }
+}
+  .container
+  {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .menu
+  {
+      width: 100%;
+      &__titre h2
+      {
+          font-weight: normal;
+      }
+      &__titre h2::after
+      {
+          content: "";
+          display: block;
+          width: 55px;
+          height: 3px;
+          background: $tertiaire;
+          margin-top: 2px;
+      }
+      &__card
+      {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          overflow: hidden;
+          background: white;
+          border: 1px white;
+          border-radius: 25px;
+          margin-top: 15px;
+          @include box-shadow ;
+          position: relative;
+          cursor: pointer;
+            &:hover > .menu__card-check
+            { 
+               background-color: $tertiaire;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 5px;
+                overflow: hidden;
+                border-radius: 0px 25px 25px 0px;
+                animation: checkanim 1.5s ease-in-out both;
+               
+            }
+            &:hover .fa-check-circle
+             {
+                transition: transform 700ms;
+                animation: spin 1s ease-in-out both;
+            }
+             
+          &-prix
+          {
+              display: flex;
+              align-items: flex-end;
+              font-weight: bold;
+              position: relative;
+              margin-right: 15px;
+          }
+          
+          &-texte 
+          { margin-left: 15px; 
+            width: 70%;
+              p
+              {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                position: relative;
+             }
+          }
+          &-check
+          {
+              display: flex;
+              align-items: center;
+              overflow: hidden;
+
+            .fa-check-circle
+            {
+                color: white;
+                font-size: 19px;
+                font-weight: bold;
+                
+            }
+          }
+      }
+    }
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 .commander__btn
 {
     background: linear-gradient($secondaire, $primaire);
@@ -200,6 +331,10 @@ header
     font-size: 18px;
     margin-bottom: 20px;
     transition: all 400ms;
+    display: flex;
+    justify-content: center;
+    width: 165px;
+    margin-top: 25px;
         &:hover 
             {
                 opacity: 0.90;

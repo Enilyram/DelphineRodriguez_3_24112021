@@ -17,8 +17,8 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  -webkit-animation: backgroundcharge 5s ease-in forwards;
-          animation: backgroundcharge 5s ease-in forwards;
+  -webkit-animation: backgroundcharge 3200ms ease forwards;
+          animation: backgroundcharge 3200ms ease forwards;
 }
 
 @-webkit-keyframes backgroundcharge {
@@ -50,8 +50,8 @@
   width: 50px;
   height: 50px;
   z-index: 4;
-  -webkit-animation: spin 5000ms ease-in forwards;
-          animation: spin 5000ms ease-in forwards;
+  -webkit-animation: spin 3000ms ease-in-out forwards;
+          animation: spin 3000ms ease-in-out forwards;
 }
 
 @-webkit-keyframes spin {
@@ -83,9 +83,6 @@
 }
 
 @media (max-width: 580px) {
-  .restaurant__bloc__card-new {
-    margin: 15px 15px 15px 70%;
-  }
   footer h2 {
     padding-left: 40px;
     padding-top: 20px;
@@ -103,9 +100,6 @@
 }
 
 @media (min-width: 580px) {
-  .restaurant__bloc__card-new {
-    margin: 15px 15px 15px 80%;
-  }
   footer {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -336,7 +330,7 @@ input {
       -ms-flex-align: center;
           align-items: center;
   color: white;
-  margin-left: -23px;
+  margin-left: -8%;
 }
 
 .restaurant {
@@ -354,6 +348,14 @@ input {
       -ms-flex-align: center;
           align-items: center;
   background-color: #ebebeb;
+}
+
+.restaurant__img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px 10px 0 0;
 }
 
 .restaurant__titre {
@@ -407,10 +409,12 @@ input {
   background-color: #99E2D0;
   padding: 10px 20px 10px 20px;
   border-radius: 5px;
-  color: #5f867c;
+  color: #2d8a76;
   font-weight: bold;
   font-size: 18px;
   position: absolute;
+  top: 10px;
+  right: 20px;
 }
 
 .restaurant__bloc__card-new h5 {
@@ -460,8 +464,8 @@ input {
 }
 
 .restaurant__bloc__card-description-icon .heart-main:hover path {
-  -webkit-animation: stroke-animation 1.8s ease-in-out forwards;
-          animation: stroke-animation 1.8s ease-in-out forwards;
+  -webkit-animation: stroke-animation 1.8s ease-in both;
+          animation: stroke-animation 1.8s ease-in both;
 }
 
 @-webkit-keyframes stroke-animation {
@@ -536,14 +540,6 @@ input {
   }
 }
 
-.restaurant__img {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
-}
-
 footer {
   background-color: rgba(0, 0, 0, 0.849);
   color: white;
@@ -557,10 +553,24 @@ footer h2 {
 footer a {
   text-decoration: none;
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 footer a:hover {
   color: white;
+}
+
+footer a p {
+  margin-left: 10px;
 }
 
 .lien_footer {
@@ -583,5 +593,9 @@ footer a:hover {
 
 .lien_footer ul li {
   color: white;
+}
+
+.lien_footer ul li i {
+  margin-left: 1px;
 }
 /*# sourceMappingURL=main.css.map */
