@@ -15,16 +15,34 @@ $background: #ebebeb;
   display: flex;
   justify-content: center;
 }
-@mixin shrik {
+@mixin shrik 
+{
     font-family: 'Shrikhand', cursive;
     font-weight: normal;
 } 
-@media (max-width:580px)
+@media (min-width:700px)
 {
-    .restaurant__bloc__card-new
+    .container
     {
-        margin: 15px 15px 15px 70%;
+        display: flex;
+        flex-direction: row;
     }
+    footer
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+
+        .lien_footer ul
+        {
+            display: flex;
+            flex-direction: raw;
+
+        }
+    }
+}
+@media (max-width:700px)
+{
     footer
     {
         h2
@@ -42,51 +60,54 @@ $background: #ebebeb;
         }
     }
 }
-@media (min-width:580px)
-{
-    .restaurant__bloc__card-new
-    {
-        margin: 15px 15px 15px 80%;
-    }
-    footer
-    {
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-
-        .lien_footer ul
-        {
-            display: flex;
-            flex-direction: raw;
-
-        }
-    }
-}
 .vignet1
 {
-    -origin: bottom;
-    animation: slide 1s ease-in 0.1s  both;
+    transform-origin: bottom;
+    animation: slide 1s ease-in-out 0.1s both;
 }
 .vignet2
 {
-    animation: slide 1s ease-in 0.3s  both;
+    animation: slide 1s ease-in-out 0.3s both;
 }
 .vignet3
 {
-    animation: slide 1s ease-in 0.6s  both;
+    animation: slide 1s ease-in-out 0.6s both;
 }
-@keyframes slide {
-    0%{
+@keyframes slide 
+{
+    0% 
+    {
+        transform: translateY(15px);
         opacity: 0;
     }
-    100%{
-        opacity: 1;
+    17% 
+    {
+        transform: translateY(13px);
     }
+    24% 
+    {
+        transform: translateY(8px);
+    }
+    46% 
+    {
+        transform: translateY(3px);
+    }
+    100% 
+    {
+        opacity: 1;
+    
+       
+        transform: translateY(0);
+    }
+}
+html
+{
+    scroll-behavior: smooth;
 }
 body 
 {
     margin: 0;
-    min-width: 390px;
+    min-width: 400px;
 }
 main
 {
@@ -98,9 +119,11 @@ main
     display: flex;
     flex-direction: column;
     align-items: center;
-    a{
-    text-decoration: none;
-    color: black;
+    a
+    {
+        text-decoration: none;
+        color: black;
+
         &:hover 
         {
             color: black;
@@ -113,9 +136,11 @@ main
 }
 header
 {
-    a{
-    text-decoration: none;
-    color: black;
+    a
+    {
+        text-decoration: none;
+        color: black;
+        
         &:hover 
         {
             color: black;
@@ -136,8 +161,8 @@ header
     &-img
     {
         height: 100%;
-   width: 100%;
-   object-fit: cover;
+        width: 100%;
+        object-fit: cover;
     }
 }
 
@@ -158,19 +183,22 @@ header
     cursor: pointer;
     position: relative;
   
-    svg {
+    svg 
+    {
       overflow: visible;
       width: 30px;
     }
   
-    path {
+    path 
+    {
       stroke-dashoffset: 0;
       stroke-dasharray: 1550;
       transform-origin: center;
       fill: transparent;
     }
   
-    .heart-background {
+    .heart-background 
+    {
       position: absolute;
       left: 0;
       right: 0;
@@ -178,150 +206,181 @@ header
       stroke: none;
     }
   
-    .heart-main:hover path {
+    .heart-main:hover path 
+    {
       animation: stroke-animation 1.8s ease-in-out forwards;
     }
 }
-@keyframes stroke-animation {
-    0% {
+@keyframes stroke-animation 
+{
+    0% 
+    {
       stroke-dashoffset: 0;
     }
-    30% {
+    30% 
+    {
       stroke-dashoffset: 1550;
     }
-    60% {
+    60% 
+    {
       stroke-dashoffset: 3100;
       fill: transparent;
       transform: scale(1);
       stroke: url(#mygradient);
     }
-    80% {
+    80% 
+    {
       fill: url(#mygradient);
       transform: scale(1.1);
     }
-    90% {
+    90% 
+    {
       transform: scale(1);
       fill: url(#mygradient);
     }
-    93% {
+    93% 
+    {
         transform: scale(1.1);
         fill: url(#mygradient);
-      }
-    100% {
+    }
+    100% 
+    {
       stroke-dashoffset: 3100;
       fill: url(#mygradient);
       stroke: url(#mygradient);
     }
-  }
-  @keyframes checkanim {
-    0% {
-      flex: 0;
-      background-color: $tertiaire;
+}
+@keyframes checkanim 
+{
+    0% 
+    {
+        flex: 0;
+        background-color: $tertiaire;
     }
-    70% {
-      flex: 1.5;
-      background-color: $tertiaire;
+    70% 
+    {
+        flex: 1.5;
+        background-color: $tertiaire;
     }
-    100% {
-      flex: 1;
-      background-color: $tertiaire;
+    100% 
+    {
+        flex: 1;
+        background-color: $tertiaire;
     }
 }
-  .container
-  {
-      width: 90%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-  }
-  .menu
-  {
-      width: 100%;
-      &__titre h2
-      {
-          font-weight: normal;
-      }
-      &__titre h2::after
-      {
-          content: "";
-          display: block;
-          width: 55px;
-          height: 3px;
-          background: $tertiaire;
-          margin-top: 2px;
-      }
-      &__card
-      {
-          display: flex;
-          justify-content: space-between;
-          width: 100%;
-          overflow: hidden;
-          background: white;
-          border: 1px white;
-          border-radius: 25px;
-          margin-top: 15px;
-          @include box-shadow ;
-          position: relative;
-          cursor: pointer;
-            &:hover > .menu__card-check
-            { 
-               background-color: $tertiaire;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 5px;
-                overflow: hidden;
-                border-radius: 0px 25px 25px 0px;
-                animation: checkanim 1.5s ease-in-out both;
-               
-            }
-            &:hover .fa-check-circle
-             {
-                transition: transform 700ms;
-                animation: spin 1s ease-in-out both;
-            }
+.container
+{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menu
+{
+  width: 100%;
+
+    &__titre h2
+    {
+      font-weight: normal;
+    }
+
+    &__titre h2::after
+    {
+        content: "";
+        display: block;
+        width: 55px;
+        height: 3px;
+        background: $tertiaire;
+        margin-top: 2px;
+    }
+
+    &__card
+    {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        overflow: hidden;
+        background: white;
+        border: 1px white;
+        border-radius: 25px;
+        margin-top: 15px;
+        @include box-shadow ;
+        position: relative;
+        cursor: pointer;
+
+        &:hover > .menu__card-check
+        { 
+            background-color: $tertiaire;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5%;
+            border-radius: 0px 25px 25px 0px;
+            animation: checkanim 1.5s ease-in-out both;
+        }
+
+        &:hover .fa-check-circle
+        {
+            transition: transform 700ms;
+            animation: spin 1s ease-in-out both;
+        }
              
-          &-prix
-          {
-              display: flex;
-              align-items: flex-end;
-              font-weight: bold;
-              position: relative;
-              margin-right: 15px;
-          }
+        &-prix
+        {
+          display: flex;
+          align-items: flex-end;
+          font-weight: bold;
+          position: relative;
+          margin-right: 15px;
+        }
           
-          &-texte 
-          { margin-left: 15px; 
+        &-texte 
+        { 
+            margin-left: 15px; 
             width: 70%;
-              p
-              {
+
+            h3 
+            {
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 position: relative;
-             }
-          }
-          &-check
-          {
-              display: flex;
-              align-items: center;
-              overflow: hidden;
+            }
+
+            p
+            {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                position: relative;
+                margin-right: 15px;
+            }
+        }
+
+        &-check
+        {
+          display: flex;
+          align-items: center;
+          overflow: hidden;
+          width: 5%;   
 
             .fa-check-circle
             {
                 color: white;
                 font-size: 19px;
                 font-weight: bold;
-                
+                    
             }
-          }
-      }
+        }
     }
-  @keyframes spin {
-    to {
+}
+@keyframes spin 
+{
+    to 
+    {
       transform: rotate(360deg);
     }
-  }
+}
 .commander__btn
 {
     background: linear-gradient($secondaire, $primaire);
@@ -335,50 +394,64 @@ header
     justify-content: center;
     width: 165px;
     margin-top: 25px;
-        &:hover 
-            {
-                opacity: 0.90;
-                @include box-shadow-hover;
-            }
-                a
-                {
-                    color: whitesmoke;
-                        &:hover
-                        {
-                            color: whitesmoke;
-                        }
-                }
+    &:hover 
+    {
+        opacity: 0.90;
+        @include box-shadow-hover;
+    }
+
+    a
+    {
+        color: whitesmoke;
+            
+        &:hover
+        {
+           color: whitesmoke;
+        }
+    }
 }
+
 footer
 {
     
     background-color: rgba(0, 0, 0, 0.849);
     color: white;
+
     h2
     {
         @include shrik
     }
+
     a
     {
       text-decoration: none;
         color: rgb(255, 255, 255);
-          &:hover 
-          {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        &:hover 
+        {
           color: rgb(255, 255, 255);
-          }
+        }
     }
+}
+.texteicone
+{
+    margin-left: 10px;
 }
 .lien_footer
 {
     display: flex;
     width: 100%;
     color: white;
+
     ul
     {
         display: flex;
         justify-content: space-around;
         width: 100%;
         color: white;
+
         li
         {
             color: white;

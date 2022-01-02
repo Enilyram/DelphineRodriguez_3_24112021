@@ -123,6 +123,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   min-width: 390px;
@@ -569,7 +573,7 @@ footer a:hover {
   color: white;
 }
 
-footer a p {
+.texteicone {
   margin-left: 10px;
 }
 
@@ -593,9 +597,5 @@ footer a p {
 
 .lien_footer ul li {
   color: white;
-}
-
-.lien_footer ul li i {
-  margin-left: 1px;
 }
 /*# sourceMappingURL=main.css.map */

@@ -104,7 +104,10 @@ $background: #ebebeb;
         }
     }
 }
-
+html
+{
+    scroll-behavior: smooth;
+}
 body 
 {
     margin: 0;
@@ -421,12 +424,12 @@ footer
           {
           color: rgb(255, 255, 255);
           }
-          p
-          {
-              margin-left: 10px;
-          }
     }
 
+}
+.texteicone
+{
+     margin-left: 10px;
 }
 .lien_footer
 {
@@ -442,10 +445,6 @@ footer
         li
         {
             color: white;
-            i
-            {
-                margin-left: 1px;
-            }
         }
     }
 }

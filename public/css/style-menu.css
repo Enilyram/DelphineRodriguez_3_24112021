@@ -1,26 +1,12 @@
-@media (max-width: 580px) {
-  .restaurant__bloc__card-new {
-    margin: 15px 15px 15px 70%;
-  }
-  footer h2 {
-    padding-left: 40px;
-    padding-top: 20px;
-    margin-bottom: 2px;
-  }
-  footer .lien_footer ul {
+@media (min-width: 700px) {
+  .container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
-
-@media (min-width: 580px) {
-  .restaurant__bloc__card-new {
-    margin: 15px 15px 15px 80%;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
   footer {
     display: -webkit-box;
@@ -45,43 +31,97 @@
   }
 }
 
+@media (max-width: 700px) {
+  footer h2 {
+    padding-left: 40px;
+    padding-top: 20px;
+    margin-bottom: 2px;
+  }
+  footer .lien_footer ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .vignet1 {
-  -origin: bottom;
-  -webkit-animation: slide 1s ease-in 0.1s  both;
-          animation: slide 1s ease-in 0.1s  both;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-animation: slide 1s ease-in-out 0.1s both;
+          animation: slide 1s ease-in-out 0.1s both;
 }
 
 .vignet2 {
-  -webkit-animation: slide 1s ease-in 0.3s  both;
-          animation: slide 1s ease-in 0.3s  both;
+  -webkit-animation: slide 1s ease-in-out 0.3s both;
+          animation: slide 1s ease-in-out 0.3s both;
 }
 
 .vignet3 {
-  -webkit-animation: slide 1s ease-in 0.6s  both;
-          animation: slide 1s ease-in 0.6s  both;
+  -webkit-animation: slide 1s ease-in-out 0.6s both;
+          animation: slide 1s ease-in-out 0.6s both;
 }
 
 @-webkit-keyframes slide {
   0% {
+    -webkit-transform: translateY(15px);
+            transform: translateY(15px);
     opacity: 0;
+  }
+  17% {
+    -webkit-transform: translateY(13px);
+            transform: translateY(13px);
+  }
+  24% {
+    -webkit-transform: translateY(8px);
+            transform: translateY(8px);
+  }
+  46% {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
   }
   100% {
     opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
 @keyframes slide {
   0% {
+    -webkit-transform: translateY(15px);
+            transform: translateY(15px);
     opacity: 0;
+  }
+  17% {
+    -webkit-transform: translateY(13px);
+            transform: translateY(13px);
+  }
+  24% {
+    -webkit-transform: translateY(8px);
+            transform: translateY(8px);
+  }
+  46% {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
   }
   100% {
     opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  min-width: 390px;
+  min-width: 400px;
 }
 
 main {
@@ -369,8 +409,7 @@ header h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 5px;
-  overflow: hidden;
+  width: 5%;
   border-radius: 0px 25px 25px 0px;
   -webkit-animation: checkanim 1.5s ease-in-out both;
           animation: checkanim 1.5s ease-in-out both;
@@ -402,11 +441,19 @@ header h1 {
   width: 70%;
 }
 
+.menu__card-texte h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+}
+
 .menu__card-texte p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   position: relative;
+  margin-right: 15px;
 }
 
 .menu__card-check {
@@ -417,6 +464,7 @@ header h1 {
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
+  width: 5%;
 }
 
 .menu__card-check .fa-check-circle {
@@ -487,10 +535,24 @@ footer h2 {
 footer a {
   text-decoration: none;
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 footer a:hover {
   color: white;
+}
+
+.texteicone {
+  margin-left: 10px;
 }
 
 .lien_footer {
