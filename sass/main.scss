@@ -1,9 +1,10 @@
-$primaire: #9356DC;
-$secondaire: #FF79DA;
-$tertiaire: #99E2D0;
-$background: #ebebeb;
-/*écran de chargement*/
-.bloc__chargement {
+@import "./utils/variable";
+@import "./utils/mixin";
+@import "./base/animation";
+
+/*ecran de chargement*/
+.bloc__chargement 
+{
     background-color: $background;
     display: flex;
     justify-content: center;
@@ -15,18 +16,9 @@ $background: #ebebeb;
     width: 100%;
     height: 100vh;
     animation: backgroundcharge 3200ms ease forwards;
-  }
-  
-  @keyframes backgroundcharge {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      z-index: -2;
-    }
-  } 
-  .chargement {
+}  
+.chargement 
+{
     border-top: 40px solid $primaire;
     border-bottom: 40px solid $secondaire;
     border-left: 40px solid #9256dcc4;
@@ -36,39 +28,10 @@ $background: #ebebeb;
     height: 50px;
     z-index: 4;
     animation: spin 3000ms ease-in-out forwards;
-  }
-  
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-      opacity: 1;
-    }
-    100% {
-      transform: rotate(720deg);
-      opacity: 0;
-      z-index: -1;
-    }
-  }
-  
+}
+   
+/*mediaqueries*/
 
-
-@mixin box-shadow 
-{
-    box-shadow: #a5a5a5 0 5px 10px;
-}
-@mixin box-shadow-hover 
-{
-    box-shadow: #747272 0 5px 10px;
-}
-@mixin center
-{
-  display: flex;
-  justify-content: center;
-}
-@mixin shrik {
-    font-family: 'Shrikhand', cursive;
-    font-weight: normal;
-}
 @media (max-width:580px)
 {
     footer
@@ -78,6 +41,7 @@ $background: #ebebeb;
             padding-left: 40px; 
             padding-top: 20px;
             margin-bottom: 2px;
+            margin-top: 0;
         }
 
         .lien_footer ul
@@ -104,6 +68,9 @@ $background: #ebebeb;
         }
     }
 }
+
+/*general*/
+
 html
 {
     scroll-behavior: smooth;
@@ -116,42 +83,54 @@ body
 main
 {
     font-family: 'Roboto', sans-serif;
-    a{
-    text-decoration: none;
-    color: black;
+
+    a
+    {
+        text-decoration: none;
+        color: black;
+        
         &:hover 
         {
             color: black;
         }
     }
-}
-header
-{
-    a{
-    text-decoration: none;
-    color: black;
-        &:hover 
-        {
-            color: black;
-        }
-    }
-    
 }
 *
 {
     list-style: none;
 }
 
-.titreprincipal {
-    @include center;
+/*header*/
+
+header
+{
+    a
+    {
+        text-decoration: none;
+        color: black;
+        
+        &:hover 
+        {
+            color: black;
+        }
+    }
+}
+.titreprincipal 
+{
+    display: flex;
+    justify-content: center;
     @include shrik;
     border-bottom: solid #B7B7B7;
 }
-.recherche{
+
+/*recherche et presenation*/
+
+.recherche
+{
     background-color: #dedede;
     box-shadow: inset 0 7px 7px -8px rgba(0, 0, 0, 0.4);
-  @include center
-  
+    display: flex;
+    justify-content: center;
 }
 input 
 {
@@ -163,50 +142,51 @@ input
     height: 50px;
     margin-top: 4px;
 }
-
 .explorez
 {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: $background;
-        &__texte 
+        
+    &__texte 
+    {
+        width: 60%;
+        text-align: center;
+
+        h2
         {
-            width: 60%;
-            text-align: center;
+            display: flex;
+            justify-content:center;
+        }
+    }
         
+    &__btn
+    {
+        background: linear-gradient($secondaire, $primaire);
+        @include box-shadow;
+        border-radius: 25px;
+        padding: 15px;
+        font-size: 18px;
+        margin-bottom: 20px;
+        transition: all 400ms;
         
-        
-            h2
+        &:hover 
+        {
+            opacity: 0.90;
+            @include box-shadow-hover;
+        }
+                
+        a
+        {
+            color: whitesmoke;
+            
+            &:hover
             {
-                display: flex;
-                justify-content:center;
+                color: whitesmoke;
             }
         }
-        &__btn
-        {
-            background: linear-gradient($secondaire, $primaire);
-            @include box-shadow;
-            border-radius: 25px;
-            padding: 15px;
-            font-size: 18px;
-            margin-bottom: 20px;
-            transition: all 400ms;
-                &:hover 
-                {
-                    opacity: 0.90;
-                    @include box-shadow-hover;
-                }
-                a
-                {
-                    color: whitesmoke;
-                        &:hover
-                        {
-                            color: whitesmoke;
-                        }
-                }
-            
-        }
+    }
 }
 .fonctionnement
 {
@@ -237,38 +217,43 @@ input
             margin: 10px;
             @include box-shadow;
             transition: all 500ms;
-                &:hover
-                {
-                    background-color: #dfccf5;
-                    @include box-shadow-hover;
-                }
-                &:hover i
-                {
-                    color: $primaire;
-                }
+                
+            &:hover
+            {
+                background-color: #dfccf5;
+                @include box-shadow-hover;
+            }
+
+            &:hover i
+            {
+                color: $primaire;
+            }
+    
             &__icon
             {
                 display: flex;
                 align-items: center;
             }
+           
             &__num
             {
-                    background-color: $primaire;
-                    border-radius: 50%;
-                    width: 25px;
-                    height: 25px;
-                    display: flex;
-                    align-content: center;
-                    justify-content: center;
-                    align-items: center;
-                    color: white;
-                    margin-left: -8%;
-                   
+                background-color: $primaire;
+                border-radius: 50%;
+                width: 25px;
+                height: 25px;
+                display: flex;
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                margin-left: -8%;
             }
         }
-
     }
 }
+
+/*restaurants*/
+
 .restaurant
 {
     display: flex;
@@ -276,143 +261,130 @@ input
     flex-direction: column;
     align-items: center;
     background-color: $background;
-        &__img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-            border-radius: 10px 10px 0 0;
-        }
-        &__titre
+    
+    &__img 
+    {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+    }
+        
+    &__titre
+    {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__bloc
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        max-width: 900px;
+            
+        &__card
         {
-            display: flex;
-            justify-content: center;
-        }
-        &__bloc
-        {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            max-width: 900px;
-            &__card
+            height: 350px;
+            width: 95%;
+            overflow: hidden;
+            @include box-shadow;
+            border-radius: 15px;
+            margin: 25px;
+            position: relative;
+            transition: all 500ms;
+                    
+            &:hover 
             {
-                height: 350px;
-                width: 95%;
-                overflow: hidden;
-                @include box-shadow;
-                border-radius: 15px;
-                margin: 25px;
-                position: relative;
-                transition: all 500ms;
-                    &:hover 
-                    {
-                        @include box-shadow-hover;
-                    }
-                    &-img
-                    {
-                        object-fit: cover;
-                        height: 70%;
-                    }
-                    &-new 
-                    {
-                        align-self: flex-end;
-                        background-color: #99E2D0;
-                        padding: 10px 20px 10px 20px;
-                        border-radius: 5px;
-                        color: #2d8a76;
-                        font-weight: bold;
-                        font-size: 18px;
-                        position: absolute;
-                        top: 10px;
-                        right: 20px;
-                            h5
-                            {
-                                margin: 0;
-                            }
-                    }
-
-                    &-description
-                    {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        padding: 0 15px 0px 16px;
-                        &-icon {
-                            fill: transparent;
-                            stroke: rgb(0, 0, 0);
-                            stroke-width: 20;
-                            cursor: pointer;
-                            position: relative;
-                          
-                            svg {
-                              overflow: visible;
-                              width: 30px;
-                            }
-                          
-                            path {
-                              stroke-dashoffset: 0;
-                              stroke-dasharray: 1550;
-                              transform-origin: center;
-                              fill: transparent;
-                            }
-                          
-                            .heart-background {
-                              position: absolute;
-                              left: 0;
-                              right: 0;
-                              z-index: -2;
-                              stroke: none;
-                            }
-                          
-                            .heart-main:hover path {
-                                animation: stroke-animation 1.8s ease-in both;
-                              }
-                        }
-                    }
+                @include box-shadow-hover;
             }
-         }
-} 
-  @keyframes stroke-animation {
-    0% {
-      stroke-dashoffset: 0;
-    }
-    30% {
-      stroke-dashoffset: 1550;
-    }
-    60% {
-      stroke-dashoffset: 3100;
-      fill: transparent;
-      transform: scale(1);
-      stroke: url(#mygradient);
-    }
-    80% {
-      fill: url(#mygradient);
-      transform: scale(1.1);
-    }
-    90% {
-      transform: scale(1);
-      fill: url(#mygradient);
-    }
-    93% {
-        transform: scale(1.1);
-        fill: url(#mygradient);
-      }
-    100% {
-      stroke-dashoffset: 3100;
-      fill: url(#mygradient);
-      stroke: url(#mygradient);
-    }
-  }
+                    
+            &-img
+            {
+                object-fit: cover;
+                height: 70%;
+            }
+                    
+            &-new 
+            {
+                align-self: flex-end;
+                background-color: #99E2D0;
+                padding: 10px 20px 10px 20px;
+                border-radius: 5px;
+                color: #2d8a76;
+                font-weight: bold;
+                font-size: 18px;
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                            
+                h5
+                {
+                    margin: 0;
+                }
+            }
 
+            &-description
+            {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 15px 0px 16px;
+                        
+                &-icon 
+                {
+                    fill: transparent;
+                    stroke: rgb(0, 0, 0);
+                    stroke-width: 20;
+                    cursor: pointer;
+                    position: relative;
+                          
+                    svg 
+                    {
+                        overflow: visible;
+                        width: 30px;
+                    }
+                          
+                    path 
+                    {
+                        stroke-dashoffset: 0;
+                        stroke-dasharray: 1550;
+                        transform-origin: center;
+                        fill: transparent;
+                    }
+                          
+                    .heart-background 
+                    {
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        z-index: -2;
+                        stroke: none;
+                    }
+                          
+                    .heart-main:hover path 
+                    {
+                        animation: stroke-animation 1.8s ease-in both;
+                    }
+                }
+            }
+        }
+    }
+} 
+  
+/*footer*/
 
 footer
 {
     
     background-color: rgba(0, 0, 0, 0.849);
     color: white;
+
     h2
     {
         @include shrik
     }
+    
     a
     {
       text-decoration: none;
@@ -420,28 +392,30 @@ footer
         display: flex;
         flex-direction: row;
         align-items: center;
-          &:hover 
-          {
+          
+        &:hover 
+        {
           color: rgb(255, 255, 255);
-          }
+        }
     }
-
 }
 .texteicone
 {
-     margin-left: 10px;
+    margin-left: 10px;
 }
 .lien_footer
 {
     display: flex;
     width: 100%;
     color: white;
+    
     ul
     {
         display: flex;
         justify-content: space-around;
         width: 100%;
         color: white;
+        
         li
         {
             color: white;

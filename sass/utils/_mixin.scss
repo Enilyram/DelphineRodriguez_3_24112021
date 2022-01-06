@@ -1,0 +1,12 @@
+@mixin box-shadow 
+{
+    box-shadow: #a5a5a5 0 5px 10px;
+}
+@mixin box-shadow-hover 
+{
+    box-shadow: #747272 0 5px 10px;
+}
+@mixin shrik {
+    font-family: 'Shrikhand', cursive;
+    font-weight: normal;
+}

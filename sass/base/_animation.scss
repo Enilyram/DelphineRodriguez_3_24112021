@@ -1,0 +1,130 @@
+@keyframes backgroundcharge 
+{
+    0% 
+    {
+      opacity: 1;
+    }
+    100% 
+    {
+      opacity: 0;
+      z-index: -2;
+    }
+} 
+
+  @keyframes spin 
+{
+    0% 
+    {
+      transform: rotate(0deg);
+      opacity: 1;
+    }
+    100% 
+    {
+      transform: rotate(720deg);
+      opacity: 0;
+      z-index: -1;
+    }
+}
+
+@keyframes stroke-animation 
+{
+    0% 
+    {
+      stroke-dashoffset: 0;
+    }
+    30% 
+    {
+      stroke-dashoffset: 1550;
+    }
+    60% 
+    {
+      stroke-dashoffset: 3100;
+      fill: transparent;
+      transform: scale(1);
+      stroke: url(#mygradient);
+    }
+    80% 
+    {
+      fill: url(#mygradient);
+      transform: scale(1.1);
+    }
+    90% 
+    {
+      transform: scale(1);
+      fill: url(#mygradient);
+    }
+    93% 
+    {
+        transform: scale(1.1);
+        fill: url(#mygradient);
+    }
+    100% 
+    {
+      stroke-dashoffset: 3100;
+      fill: url(#mygradient);
+      stroke: url(#mygradient);
+    }
+}
+
+@keyframes slide 
+{
+    0% 
+    {
+        opacity: 0;
+        bottom: -25px;
+    }
+    70% 
+    {
+        opacity: 0.5;
+    }
+      100% 
+    {
+        opacity: 1;
+        bottom: 0;
+    }
+}
+
+@keyframes slidetitre 
+{
+    0% 
+    {
+        opacity: 0;
+        right: -25px;
+    }
+    70% 
+    {
+        opacity: 0.5;
+    }
+    100% 
+    {
+        opacity: 1;
+        right: 0;
+    }
+}
+
+@keyframes checkanim 
+{
+    0% 
+    {
+        flex: 0;
+        background-color: $tertiaire;
+    }
+    70% 
+    {
+        flex: 1.5;
+        background-color: $tertiaire;
+    }
+    100% 
+    {
+        flex: 1;
+        background-color: $tertiaire;
+    }
+}
+
+@keyframes spin 
+{
+    to 
+    {
+      transform: rotate(360deg);
+    }
+}
