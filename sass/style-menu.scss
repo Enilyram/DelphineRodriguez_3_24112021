@@ -4,6 +4,10 @@
 
 @media (min-width:992px)
 {
+    .titrerestaurant
+    {
+        justify-content: center;
+    }
     .container
     {
         display: flex;
@@ -31,6 +35,10 @@
 }
 @media (max-width:992px)
 {
+    .titrerestaurant
+    {
+        justify-content: space-evenly;
+    }
     .container
     {
         flex-direction: column;
@@ -175,10 +183,10 @@ header
 .titrerestaurant
 {
     display: flex;
-    justify-content: center;
     margin: 44px 0px 30px 0px;
     @include shrik ;
     align-items: center;
+    width: 100%;
 }
 .restaurant__bloc__card-description-icon
 {
