@@ -343,6 +343,7 @@
 /*general*/
 html {
   scroll-behavior: smooth;
+  min-width: 300px;
 }
 
 body {
@@ -380,6 +381,10 @@ main a:hover {
   list-style: none;
 }
 
+h1 {
+  font-weight: normal;
+}
+
 /*header*/
 header a {
   text-decoration: none;
@@ -409,6 +414,8 @@ header h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .titreprincipal__logo {
@@ -416,7 +423,7 @@ header h1 {
 }
 
 .header__back {
-  font-size: 26px;
+  font-size: 20px;
 }
 
 .header__img {
@@ -493,7 +500,7 @@ header h1 {
 }
 
 .menu__titre h2 {
-  font-weight: normal;
+  font-weight: 300;
 }
 
 .menu__titre h2::after {

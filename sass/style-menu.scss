@@ -103,6 +103,7 @@
 html
 {
     scroll-behavior: smooth;
+    min-width: 300px;
 }
 body 
 {
@@ -132,8 +133,15 @@ main
 *
 {
     list-style: none;
+
 }
+h1
+{
+    font-weight: normal;
+}
+
 /*header*/
+
 header
 {
     a
@@ -158,13 +166,15 @@ header
 {
     display: flex;
     align-items: center;
+    margin-left: 25px;
+    margin-right: 25px;
     &__logo
     {
         width: 100%;
     }
 }
 .header__back {
-    font-size: 26px;
+    font-size: 20px;
 }
 .header__img
 {
@@ -238,7 +248,7 @@ header
 
     &__titre h2
     {
-      font-weight: normal;
+      font-weight: 300;
     }
 
     &__titre h2::after
