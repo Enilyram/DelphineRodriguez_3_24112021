@@ -276,7 +276,7 @@
     margin-left: 15px;
   }
   .restaurant__titre {
-    width: 100%;
+    width: 90%;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
